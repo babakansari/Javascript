@@ -2,14 +2,15 @@
 
 Javascript liberary for:
 
-- Graph traversing
+- Graph traversing:
+
   Sample usage could be found in the `Sample.js` file
     
   This class provides generic Breadth First and Depth First graph traversing methods
 
-  Starts from a given `root` first node
-  The child nodes are defined using get_children callback function for a given node
-  On_visit callback function could be used to process the nodes in specific level
+  Starts from a given `root` first node.
+  The child nodes are defined using get_children callback function for a given node.
+  On_visit callback function could be used to process the nodes in specific level.
 
 Example:
 ```text
