@@ -5,7 +5,7 @@ Javascript liberary for:
 - Graph traversing
     Sample usage could be found in the `Sample.js` file
     
-GraphTraverser:
+```text
   This class provides generic Breadth First and Depth First graph traversing methods
 
   Starts from a given `root` first node
@@ -23,3 +23,4 @@ Example:
         },
        { The level property name added dynamically to the graph nodes }
      );
+```
