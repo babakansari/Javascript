@@ -7,15 +7,15 @@ import { memoize } from './Memoizer.js';
 // Example:
 //   fib(4) === 3
 
-  function slowFib(n) {
+  function fib(n) {
     if (n < 2) {
       return n;
     }
   
-    return slowFib(n - 1) + slowFib(n - 2);
+    return fib(n - 1) + fib(n - 2);
   }
   
-  const fib = memoize(slowFib);
+fib = memoize(fib);
 
   console.log(fib(6));
   
