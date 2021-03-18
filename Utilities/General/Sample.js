@@ -12,7 +12,7 @@ import { memoize } from './Memoizer.js';
       return n;
     }
   
-    return fib(n - 1) + fib(n - 2);
+    return slowFib(n - 1) + slowFib(n - 2);
   }
   
   const fib = memoize(slowFib);
