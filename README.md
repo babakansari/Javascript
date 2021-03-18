@@ -24,3 +24,7 @@ Example:
        { The level property name added dynamically to the graph nodes }
      );
 ```
+
+- Memoization 
+
+  It memorize a function call with the same parameter values
