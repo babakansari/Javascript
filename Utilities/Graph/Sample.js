@@ -1,36 +1,8 @@
 import { GraphTraverser } from './GraphTraverser.js';
+import { TreeNode } from './BTree/TreeNode.js';
+import { deserialize } from './BTree/DeserializeArray.js';
 
-// Tree data structure
-function TreeNode(val, left, right) {
-    this.val = (val===undefined ? 0 : val)
-    this.left = (left===undefined ? null : left)
-    this.right = (right===undefined ? null : right)
- }
- 
- TreeNode.prototype.toString = function() { 
-     if(!this){
-         return '(NULL)';
-     }
-     if(this.left == null && this.right == null) {
-         return `(${this.val})` ;
-     }
-     if(this.left == null) {
-         return `(${this.val}) -> ${this.right.val}` ;
-     }
-     if(this.right == null) {
-         return `${this.left.val} <- (${this.val})` ;
-     }
-     return `${this.left.val} <- (${this.val}) -> ${this.right.val}` ;
- }
-
- Array.prototype.add_child = function(node, child) { 
-    if(child) {
-        child.level = node.level + 1;
-        this.push(child);
-    }
-}; 
-
-// Use Graph Traverser methods to traverse the tree in ZigZag order 
+//------- Use Graph Traverser methods to traverse the tree in ZigZag order 
 var zigzagLevelOrder = function(root) {
     
     const result = [];
@@ -80,5 +52,31 @@ let n11 = new TreeNode(11, n111, n112);
 let n12 = new TreeNode(12, n121, n122);
 let n1 = new TreeNode(1, n11, n12);
 
+//console.log( zigzagLevelOrder( n1 ).toString() );
 
-console.log( zigzagLevelOrder( n1 ).toString() );
+//------- Use Deserializer to create a Binary Tree from a Leet Code array
+var visualizeBinaryTree = function(root){
+    const graphTraverser = new GraphTraverser();
+    graphTraverser.bfs(root, (node) =>{
+            let children = [];
+            if(node.left){
+                children.push(node.left);
+            }
+            if(node.right){
+                children.push(node.right);
+            }
+            return children;
+        },
+        (node, level) => {
+            console.log( `Level[${level}] = ${node}` );
+        }
+    );
+
+}
+
+let arr ;
+arr =  [1,2,3,null,5,null,4];
+// arr = [1,2,3,null,null,4,5];
+let root = deserialize(arr);
+console.log(root);
+visualizeBinaryTree(root);
