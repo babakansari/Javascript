@@ -1,5 +1,12 @@
 /**
-Subsets - LeetCode 78
+    Subsets - LeetCode 78
+
+    Returns all possible subsets.
+    E.g.
+        n = 3
+        [..., [1,2,3], [2,3], ...]
+
+    https://jamboard.google.com/d/1Jm2rTQ66AgV6WS-Rk2EAfRos9bgmgo2WO1rKy617wcM/viewer?f=11
  */
 var subsets = function(nums) {
     let result = [];

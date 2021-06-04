@@ -1,5 +1,11 @@
 /**
- 77. Combinations leetcode
+    77. Combinations leetcode
+
+    Returns k combinations of n. 
+    E.g.
+        n > 2
+        k = 2
+        [..., [1,2], ...]
  */
 var Combine = function(n, k) {
     
@@ -10,10 +16,7 @@ var Combine = function(n, k) {
             result.push(current);
             return;
         }
-        if(current.length > k) {
-            return;
-        }
-        
+
         for(let i = start; i <= n; i++) {
             dfs(current.concat(i), i + 1);
         }
@@ -23,6 +26,17 @@ var Combine = function(n, k) {
     dfs([], 1);
     return result;
 };
+
+// Input: n = 4, k = 2
+// Output:
+// [
+//   [2,4],
+//   [3,4],
+//   [2,3],
+//   [1,2],
+//   [1,3],
+//   [1,4],
+// ]
 
 
 const n = 4;
