@@ -1,6 +1,7 @@
 /**
     K Combinations array
 
+    Returns all possible k combinations array. 
     E.g.
         n > 2
         k = 2
