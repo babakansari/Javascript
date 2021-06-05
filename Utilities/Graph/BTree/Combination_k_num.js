@@ -1,6 +1,8 @@
 /**
     77. Combinations leetcode
 
+    Orders doesn't matter in combination
+
     Returns k combinations of n. 
     E.g.
         n > 2
