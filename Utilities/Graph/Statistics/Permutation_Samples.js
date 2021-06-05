@@ -1,5 +1,5 @@
-import { Permutation, Print_Permutaions } from './Permutation.js';
-
+import { Permutation } from './Permutation.js';
+import { Print_Permutaions } from './Visualizations.js';
 /**
     Permutations - LeetCode 46
 
