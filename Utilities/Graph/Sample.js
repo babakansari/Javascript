@@ -1,6 +1,6 @@
 import { GraphTraverser } from './GraphTraverser.js';
-import { TreeNode } from './BTree/TreeNode.js';
-import { deserialize } from './BTree/DeserializeArray.js';
+import { TreeNode } from './Tree/TreeNode.js';
+import { deserialize } from './Tree/DeserializeArray.js';
 
 //------- Use Graph Traverser methods to traverse the tree in ZigZag order 
 var zigzagLevelOrder = function(root) {

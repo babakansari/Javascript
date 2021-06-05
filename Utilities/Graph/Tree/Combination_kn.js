@@ -1,5 +1,8 @@
 /**
-    K Combinations set
+    K combination of elements in an array
+
+    Order no matter in combination:
+      C(n, k) = n! / ((n-k)! * k!)
 
     Returns all possible k combinations set.
     E.g.
