@@ -74,9 +74,16 @@ var visualizeBinaryTree = function(root){
 
 }
 
+//----------- Deserialize array presentation of the tree --------
+//-------------- and visualize the tree using BFS ---------------
+//              1
+//          /       \
+//        2           3
+//          \           \
+//           5            4
 let arr ;
 arr =  [1,2,3,null,5,null,4];
 // arr = [1,2,3,null,null,4,5];
 let root = deserialize(arr);
-console.log(root);
+console.log(`root = ${root.toString()}`);
 visualizeBinaryTree(root);

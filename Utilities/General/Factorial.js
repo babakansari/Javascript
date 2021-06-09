@@ -1,6 +1,6 @@
 export function Factorial(n) {
-    if(n<3){
-        return n;
+    if(n<2){
+        return 1;
     }
 
     let result = 2;
@@ -11,4 +11,4 @@ export function Factorial(n) {
     return result;
 }
 
-console.log( Factorial(4) );
+console.log( Factorial(3) );
