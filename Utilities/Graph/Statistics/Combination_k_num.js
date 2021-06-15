@@ -13,14 +13,14 @@ var Combine = function(n, k) {
     
     let result = [];
     
-    function dfs(current, start) {
-        if(current.length == k) {
-            result.push(current);
+    function dfs(node, start) {
+        if(node.length == k) {
+            result.push(node);
             return;
         }
 
         for(let i = start; i <= n; i++) {
-            dfs(current.concat(i), i + 1);
+            dfs(node.concat(i), i + 1);
         }
         
     }

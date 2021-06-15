@@ -10,9 +10,7 @@
  */
 var subsets = function(nums) {
     let result = [];
-    nums = nums.sort();
     dfs([], 0);
-
 
     function dfs(node, index){
         if(node == null){
@@ -27,7 +25,7 @@ var subsets = function(nums) {
         const leftNode = node.concat(nums[index]);
         dfs( leftNode, index+1 );
 
-        //dfs( node, index+1 );
+        dfs( node, index+1 );
     }
     
     return result; 

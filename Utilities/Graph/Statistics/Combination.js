@@ -17,20 +17,20 @@ export function Combination(arr, k) {
   console.log(`(${k}) combination of items in [${arr}] array`);
   let result = [];
 
-  function dfs(node, start, level){
+  function dfs(node, start){
     
-    if(level == k){
+    if(node.length == k) {
       result.push( node );
       return;
     }
     
     for(let i = start; i < arr.length; i++){
-      dfs( node.concat(arr[i]), i+1, level+1 );
+      dfs( node.concat(arr[i]), i + 1 );
     }
 
   }
 
-  dfs( [], 0, 0 );
+  dfs( [], 0 );
   
   return result;
 }

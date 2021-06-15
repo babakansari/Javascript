@@ -10,7 +10,6 @@
  */
 var subsets = function(nums) {
     let result = [];
-    nums = nums.sort();
     dfs([], 0);
 
     function GetLeftNode(node, index){
