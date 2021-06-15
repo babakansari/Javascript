@@ -45,7 +45,23 @@ Print_Permutaions (result);
 //         4,2
 //         4,3
 
-nums = [1, 2, 3, 4];
+nums = [1, 2, 3];
+k = 2;
+result = Permutation (nums, k);
+Print_Permutaions (result);
+
+// Input: nums = [1,2,3]
+// k = 2
+// Output: 
+//         1,2
+//         1,3
+//         2,1
+//         2,3
+//         2,4
+//         3,1
+//         3,2
+
+nums = [1, 2, 3];
 k = 2;
 result = Permutation (nums, k);
 Print_Permutaions (result);

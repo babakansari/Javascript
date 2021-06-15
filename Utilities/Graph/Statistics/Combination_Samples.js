@@ -29,3 +29,17 @@ nums = [1, 2, 3];
 k = 2;
 result = Combination( nums, k );
 Print_Permutaions (result);
+
+// Input: nums = [1,2,3,4]
+// k = 2
+// Result
+//     1,2
+//     1,3
+//     1,4
+//     2,3
+//     2,4
+//     3,4  
+nums = [1, 2, 3, 4];
+k = 2;
+result = Combination( nums, k );
+Print_Permutaions (result);
