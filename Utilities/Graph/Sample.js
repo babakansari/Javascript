@@ -79,10 +79,10 @@ var visualizeBinaryTree = function(root){
 //              1
 //          /       \
 //        2           3
-//          \           \
-//           5            4
+//      /   \           \
+//     7      5           4
 let arr ;
-arr =  [1,2,3,null,5,null,4];
+arr =  [1,2,3,7,5,null,4];
 // arr = [1,2,3,null,null,4,5];
 let root = deserialize(arr);
 console.log(`root = ${root.toString()}`);

@@ -12,20 +12,20 @@ var subsets = function(nums) {
     let result = [];
     dfs([], 0);
 
-    function dfs(node, index){
+    function dfs(node, level){
         if(node == null){
             return;
         }
-        
-        if(index == nums.length){
+            
+        if(level == nums.length){
             result.push(  node  );
             return;
         }
 
-        const leftNode = node.concat(nums[index]);
-        dfs( leftNode, index+1 );
+        const leftNode = node.concat(nums[level]);
+        dfs( leftNode, level+1 );
 
-        dfs( node, index+1 );
+        dfs( node, level+1 );
     }
     
     return result; 
