@@ -1,6 +1,7 @@
 /**
  * N permutaion of elements in two or more arrays:
  *  
+ * https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/
  */
 var letterCombinations = function(digits) {
     if (!digits || digits.length === 0) {
