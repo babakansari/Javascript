@@ -3,13 +3,21 @@
  *  
  * https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/
  */
-var letterCombinations = function(digits) {
+var letterPermutations = function(digits) {
     if (!digits || digits.length === 0) {
         return [];
     }
     
     const res = [];
-    const mapping = getNumberLetterMap();
+    const mapping = new Map([
+        ['2', "abc"], 
+        ['3', "def"], 
+        ['4', "ghi"], 
+        ['5', "jkl"], 
+        ['6', "mno"], 
+        ['7', "pqrs"], 
+        ['8', "tuv"], 
+        ['9', "wxyz"]]);
     dfs([], 0);
 
     function dfs(curList, index) {
@@ -24,19 +32,6 @@ var letterCombinations = function(digits) {
         }
     }   
 
-    function getNumberLetterMap() {
-        const map = [
-            ['2', "abc"], 
-            ['3', "def"], 
-            ['4', "ghi"], 
-            ['5', "jkl"], 
-            ['6', "mno"], 
-            ['7', "pqrs"], 
-            ['8', "tuv"], 
-            ['9', "wxyz"]];
-        return new Map(map);
-    }
-
     return res;
 };
 
@@ -48,4 +43,4 @@ var letterCombinations = function(digits) {
 let digits = "23"
 // ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 
-console.log( letterCombinations(digits).toString() );
+console.log( letterPermutations(digits).toString() );
