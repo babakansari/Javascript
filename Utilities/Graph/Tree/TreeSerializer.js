@@ -45,3 +45,22 @@ export function deserialize(data) {
     return root;
 };
 
+
+export function serialize(root) {
+    let queue = [root], ret = [];
+    while(queue.length){
+        let node = queue.shift();
+
+        if(node==null){
+            ret.push(null);
+            continue;
+        }
+
+        ret.push(node.val);
+
+        queue.push(node.left !== null ? node.left : null);
+        queue.push(node.right !== null ? node.right : null);
+    }
+    
+    return ret;
+};

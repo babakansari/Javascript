@@ -3,10 +3,10 @@
 
     Returns all possible subsets.
     E.g.
-        n = 3
+        n = 3 => n!
         [..., [1,2,3], [2,3], ...]
 
-    https://jamboard.google.com/d/1Jm2rTQ66AgV6WS-Rk2EAfRos9bgmgo2WO1rKy617wcM/viewer?f=11
+    https://jamboard.google.com/d/1Jm2rTQ66AgV6WS-Rk2EAfRos9bgmgo2WO1rKy617wcM/viewer?f=10
  */
 var subsets = function(nums) {
     let result = [];

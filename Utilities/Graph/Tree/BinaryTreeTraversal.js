@@ -1,4 +1,4 @@
-import { deserialize } from './DeserializeArray.js';
+import { deserialize, serialize } from './TreeSerializer.js';
 /**
  *  Recursive and none recursive tree traversals
  */
@@ -119,6 +119,8 @@ class Iterator{
 //       7    4
 const root = deserialize([3,5,1,6,2,0,8,null,null,7,4]);
 
+const array = serialize(root);
+console.log(`Array = ${array.toString()}`);
 //          1
 //        /
 //      2   
