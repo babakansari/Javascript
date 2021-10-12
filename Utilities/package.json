@@ -1,6 +1,5 @@
 {
   "name": "dev",
-  
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,5 +11,8 @@
     "testEnvironment": "node"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "heap": "^0.2.6"
+  }
 }
