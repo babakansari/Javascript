@@ -1,4 +1,4 @@
-// Simple ES6 traverse backward 2D array using ES6 for loops
+// Simple ES6 traverse backward 2D array
 
 function TraverseBottomBackward(array){
     const result = [];

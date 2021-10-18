@@ -13,4 +13,4 @@ function TraverseTopForward(array){
 
 const arr1 = [ [11,12,13], [21,22,23] ];
 
-console.dir( `Traverse top forward; ${TraverseTopForward(arr1)}` );
+console.dir( `Traverse top forward: ${TraverseTopForward(arr1)}` );
