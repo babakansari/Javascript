@@ -19,31 +19,13 @@ class Iterator{
         this.InOrderRecursive(node.right);
     };
 
-    
-    // InOrder( node, res ){
-    //     const Recursions = Object.freeze({
-    //         NONE:       0,
-    //         FIRST_RECURSION:    1,
-    //         SECOND_RECURSION:    2
-    //     });
-    //     let stack = [];
-    //     let recurse = Recursions.FIRST_RECURSION;
-    //     while( true ){
-    //         if(node == null && stack.length == 0){
-    //             break;
-    //         }
-    //         if (node == null) {
-    //             node = stack.pop();
-    //             res.push(node.val); // In Order
-    //             recurse = Recursions.SECOND_RECURSION;
-    //         } else {
-    //             stack.push(node);
-    //             // res.push(node.val); // Pre Order
-    //             recurse = Recursions.FIRST_RECURSION;
-    //         }
-    //         node = (recurse == Recursions.FIRST_RECURSION) ? node.left : node.right;
-    //     }
-    // }
+    *trace(node, onMoveLeft = () =>{} , onMoveRight = () =>{} ) {
+        yield node;
+        let left = onMoveLeft (node);
+        let right = onMoveRight (node);
+        left ? yield *this.trace(left, onMoveLeft, onMoveRight) : yield null;
+        right ? yield *this.trace(right, onMoveLeft, onMoveRight) : yield null;
+    }
 
     InOrder( node, res ){
         let stack = [];
@@ -65,7 +47,6 @@ class Iterator{
             node = node.left;
         }
     }
-
 
     PreOrder( node, res ){
         let stack = [];
@@ -131,12 +112,21 @@ console.log(`Array = ${array.toString()}`);
 let iterator = new Iterator(root);
 // iterator.InOrderRecursive(root, iterator.res);
  
-iterator.InOrder(root, iterator.res);
-// iterator.PreOrder(root, iterator.res);
-// terator.PostOrder(root, iterator.res);
-
-
+console.log( "Pre-order non recursive" );
+// iterator.InOrder(root, iterator.res);
+iterator.PreOrder(root, iterator.res);
+// iterator.PostOrder(root, iterator.res);
 
 for(let item of iterator.res){
     console.log(item.toString());
+}
+
+console.log( "Pre-order recursive" );
+const tree  = iterator.trace( iterator.root, (node) => node && node.left, 
+                                            (node) =>  node && node.right);
+
+for(const node of tree){
+    if(node){
+        console.log(node.val);
+    }
 }
