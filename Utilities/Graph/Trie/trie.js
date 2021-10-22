@@ -18,17 +18,21 @@ class Node {
         return this._electedChild;
     }
 
-    addChild(childKey){
-        let node = this.children.get(childKey);
+    addChild(key){
+        let node = this.getChild(key);
         if( node == undefined ){
-            node = new Node(childKey);
-            this.children.set(childKey, node);
+            node = new Node(key);
+            this.children.set(key, node);
         } 
         node.total++;
         if(this._electedChild == null ||node.total>=this._electedChild.total){
             this._electedChild = node;
         }
         return node;
+    }
+
+    getChild(key){
+        return this.children.get(key);
     }
 }
 
@@ -60,6 +64,38 @@ export class Trie {
         return result;
     }
 
+    findNode(query){
+        let current = this.root;
+        for(const c of query){
+            let child = current.getChild(c);
+            current = child;
+        }
+        return current;
+    }
+
+    startsFrom(root, word = ""){
+        let result = [];
+        dfs(root);
+
+        function dfs(node){
+            if(node.end){
+                result.push(word);
+                return;
+            }
+            for(const [key, child] of node.children){
+                word += child.ch;
+                dfs(child);
+                word = word.slice(0, -1); 
+            }
+        }
+        return result;
+    }
+
+    startsWith(query){
+        const node = this.findNode(query);
+        return this.startsFrom(node, query);
+    }
+
     toString(){
         let result = "";
         dfs(this.root);
@@ -83,15 +119,41 @@ export class Trie {
     }
 }
 
-//// Example of usage
-// let t = new Trie();
+// Example of usage
+let t = new Trie();
 
-// t.insert("flower");
-// t.insert("floor");
-// t.insert("clock");
-// t.insert("club");
-// t.insert("fly");
-// t.insert("fire");
+t.insert("flower");
+t.insert("floor");
+t.insert("clock");
+t.insert("club");
+t.insert("fly");
+t.insert("fire");
 // //console.log( t.toString() );
 
 // console.log( `Common prefix = ${t.getCommonPrefix(2)}` );
+
+//              null
+//            /     \
+//          b        c
+//         /  \       \
+//        a    o        l
+//       /  \    \       \
+//      g     n    x       o
+//     /  \    \            \
+//    s    g     n           t
+//          \     \           \
+//           a     e           h
+//            \     \           \
+//             g     r           s
+//              \
+//               e
+t.insert("bags");
+t.insert("baggage");
+t.insert("banner");
+t.insert("box");
+t.insert("cloths");
+t.insert("bags");
+
+console.log( t.startsWith("bag") );
+
+
