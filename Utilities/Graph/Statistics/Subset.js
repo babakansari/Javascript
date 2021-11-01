@@ -48,6 +48,7 @@ var subsets = function(nums) {
 
 const nums = [1,2,3];
 const result = subsets(nums);
+console.table( result );
 for(const item of result){
     console.log(item.toString());
 }
